@@ -1,0 +1,1169 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2026年、これだけやっておけ。｜海外販売クローズドライブ</title>
+  <style>
+    /* ============ カラー変数 ============ */
+    :root {
+      --navy:   #1e3a5f;
+      --navy2:  #2a5298;
+      --coral:  #e8572a;
+      --coral2: #f07050;
+      --accent: #0d7c66;
+      --bg:     #f8f9fb;
+      --bg2:    #ffffff;
+      --border: #e2e8f0;
+      --text:   #1a202c;
+      --text2:  #4a5568;
+      --text3:  #718096;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', 'Noto Sans JP', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.8;
+    }
+
+    /* ============ HERO ============ */
+    .hero {
+      background: linear-gradient(150deg, var(--navy) 0%, var(--navy2) 100%);
+      text-align: center;
+      padding: 80px 20px 60px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -30%;
+      right: -20%;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(255,255,255,0.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-label {
+      display: inline-block;
+      background: rgba(255,255,255,0.15);
+      color: #ffffff;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      padding: 6px 20px;
+      border-radius: 20px;
+      margin-bottom: 32px;
+      border: 1px solid rgba(255,255,255,0.25);
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      font-size: clamp(32px, 7vw, 64px);
+      font-weight: 900;
+      line-height: 1.2;
+      letter-spacing: -1px;
+      margin-bottom: 16px;
+      color: #ffffff;
+    }
+
+    .hero-period {
+      font-size: clamp(14px, 3vw, 18px);
+      color: rgba(255,255,255,0.75);
+      font-weight: 600;
+      letter-spacing: 2px;
+      margin-bottom: 32px;
+    }
+
+    .hero-sub {
+      font-size: clamp(15px, 2.5vw, 18px);
+      color: rgba(255,255,255,0.85);
+      margin-bottom: 48px;
+      line-height: 1.9;
+    }
+
+    .hero-sub strong {
+      color: #ffffff;
+      font-weight: 700;
+    }
+
+    .info-box {
+      display: inline-flex;
+      flex-direction: column;
+      gap: 12px;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 12px;
+      padding: 24px 40px;
+      margin-bottom: 40px;
+      text-align: left;
+      backdrop-filter: blur(10px);
+    }
+
+    .info-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 15px;
+    }
+
+    .info-item .icon { font-size: 18px; }
+
+    .info-item .label {
+      color: rgba(255,255,255,0.65);
+      font-weight: 600;
+      min-width: 80px;
+      font-size: 13px;
+    }
+
+    .info-item .value {
+      color: #ffffff;
+      font-weight: 700;
+    }
+
+    .cta-btn {
+      display: inline-block;
+      background: var(--coral);
+      color: #ffffff;
+      font-size: 17px;
+      font-weight: 800;
+      padding: 18px 56px;
+      border-radius: 6px;
+      text-decoration: none;
+      letter-spacing: 0.5px;
+      transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+      cursor: pointer;
+      border: none;
+    }
+
+    .cta-btn:hover {
+      background: var(--coral2);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(232,87,42,0.35);
+    }
+
+    .cta-note {
+      margin-top: 12px;
+      font-size: 12px;
+      color: rgba(255,255,255,0.5);
+    }
+
+    /* ============ SECTIONS ============ */
+    section {
+      padding: 72px 20px;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-size: 11px;
+      letter-spacing: 4px;
+      color: var(--coral);
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    h2 {
+      font-size: clamp(22px, 4.5vw, 36px);
+      font-weight: 900;
+      line-height: 1.4;
+      margin-bottom: 28px;
+      color: var(--navy);
+    }
+
+    h2 em {
+      font-style: normal;
+      color: var(--coral);
+    }
+
+    /* ============ EMPATHY ============ */
+    .empathy-section {
+      border-top: 1px solid var(--border);
+    }
+
+    .checklist {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 40px;
+    }
+
+    .checklist li {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 16px 20px;
+      font-size: 15px;
+      line-height: 1.7;
+      color: var(--text2);
+      box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+    }
+
+    .checklist li::before {
+      content: '□';
+      color: var(--navy2);
+      font-size: 18px;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .empathy-closing {
+      font-size: 16px;
+      color: var(--text2);
+      border-left: 3px solid var(--coral);
+      padding-left: 20px;
+      line-height: 1.9;
+    }
+
+    .empathy-closing strong {
+      color: var(--navy);
+    }
+
+    /* ============ PLATFORM ============ */
+    .platform-section {
+      border-top: 1px solid var(--border);
+      background: var(--bg2);
+      max-width: 100%;
+      padding: 72px 20px;
+    }
+
+    .platform-section > * {
+      max-width: 720px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .platform-intro {
+      font-size: 15px;
+      color: var(--text2);
+      margin-bottom: 40px;
+      line-height: 1.9;
+      max-width: 720px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .platforms {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      max-width: 720px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .platform-card {
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    }
+
+    .platform-card-header {
+      padding: 20px 24px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .platform-card-header.ebay {
+      background: linear-gradient(135deg, #dbeafe, #eff6ff);
+      border-bottom: 1px solid #bfdbfe;
+    }
+
+    .platform-card-header.catawiki {
+      background: linear-gradient(135deg, #fee2d5, #fff5f0);
+      border-bottom: 1px solid #fdc5a8;
+    }
+
+    .platform-logo {
+      font-size: 28px;
+      flex-shrink: 0;
+    }
+
+    .platform-name {
+      font-size: 20px;
+      font-weight: 900;
+      color: var(--navy);
+    }
+
+    .platform-tagline {
+      font-size: 12px;
+      color: var(--text3);
+      margin-top: 2px;
+    }
+
+    .platform-card-body {
+      padding: 24px;
+      background: var(--bg2);
+    }
+
+    .platform-summary {
+      font-size: 15px;
+      color: var(--text2);
+      line-height: 1.9;
+      margin-bottom: 20px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .platform-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .platform-stat {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 12px 16px;
+    }
+
+    .platform-stat-label {
+      font-size: 10px;
+      color: var(--text3);
+      letter-spacing: 1px;
+      margin-bottom: 4px;
+    }
+
+    .platform-stat-value {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--navy);
+    }
+
+    .platform-pros {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .platform-pros li {
+      font-size: 14px;
+      color: var(--text2);
+      padding-left: 22px;
+      position: relative;
+      line-height: 1.6;
+    }
+
+    .platform-pros li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .platform-fit {
+      margin-top: 20px;
+      padding: 14px 18px;
+      border-radius: 6px;
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    .platform-fit.ebay {
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      color: #1e40af;
+    }
+
+    .platform-fit.catawiki {
+      background: #fff5f0;
+      border: 1px solid #fdc5a8;
+      color: #9a3412;
+    }
+
+    .platform-fit strong {
+      font-weight: 700;
+      display: block;
+      margin-bottom: 4px;
+      font-size: 12px;
+      letter-spacing: 1px;
+    }
+
+    .platform-compare {
+      margin-top: 32px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 24px;
+      max-width: 720px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .platform-compare-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 16px;
+      letter-spacing: 0.5px;
+    }
+
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+    }
+
+    .compare-table th {
+      padding: 10px 14px;
+      text-align: center;
+      color: var(--text3);
+      font-weight: 700;
+      border-bottom: 2px solid var(--border);
+      font-size: 12px;
+      letter-spacing: 0.5px;
+    }
+
+    .compare-table th:first-child { text-align: left; }
+
+    .compare-table td {
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--border);
+      color: var(--text2);
+      vertical-align: top;
+      line-height: 1.6;
+    }
+
+    .compare-table td:first-child {
+      color: var(--text3);
+      font-size: 12px;
+      white-space: nowrap;
+      font-weight: 600;
+    }
+
+    .compare-table td:not(:first-child) { text-align: center; }
+    .compare-table tr:last-child td { border-bottom: none; }
+
+    /* ============ CONTENT ============ */
+    .content-section {
+      border-top: 1px solid var(--border);
+    }
+
+    .content-intro {
+      font-size: 15px;
+      color: var(--text2);
+      margin-bottom: 40px;
+    }
+
+    .parts {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .part {
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+    }
+
+    .part-header {
+      background: #eef2f8;
+      border-bottom: 1px solid var(--border);
+      padding: 14px 24px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .part-num {
+      font-size: 11px;
+      letter-spacing: 2px;
+      color: var(--navy2);
+      font-weight: 700;
+    }
+
+    .part-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--navy);
+    }
+
+    .part-body {
+      padding: 20px 24px;
+      background: var(--bg2);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .part-item {
+      font-size: 14px;
+      color: var(--text2);
+      padding-left: 16px;
+      position: relative;
+      line-height: 1.7;
+    }
+
+    .part-item::before {
+      content: '▶';
+      position: absolute;
+      left: 0;
+      color: var(--coral);
+      font-size: 9px;
+      top: 6px;
+    }
+
+    /* ============ CLOSED ============ */
+    .closed-section {
+      border-top: 1px solid var(--border);
+      background: var(--navy);
+      max-width: 100%;
+      padding: 72px 20px;
+    }
+
+    .closed-section .section-label { color: rgba(255,255,255,0.5); }
+    .closed-section h2 { color: #ffffff; }
+    .closed-section h2 em { color: #93c5fd; }
+
+    .closed-box {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 10px;
+      padding: 32px;
+      font-size: 15px;
+      color: rgba(255,255,255,0.82);
+      line-height: 2;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .closed-box p + p { margin-top: 16px; }
+
+    .closed-box strong {
+      color: #ffffff;
+      font-weight: 700;
+    }
+
+    /* ============ BENEFITS ============ */
+    .benefits-section {
+      border-top: 1px solid var(--border);
+    }
+
+    .benefits {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .benefit {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+      padding: 20px;
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+    }
+
+    .benefit-icon {
+      font-size: 28px;
+      flex-shrink: 0;
+    }
+
+    .benefit-title {
+      font-size: 12px;
+      color: var(--coral);
+      font-weight: 700;
+      letter-spacing: 1px;
+      margin-bottom: 6px;
+      text-transform: uppercase;
+    }
+
+    .benefit-desc {
+      font-size: 14px;
+      color: var(--text2);
+      line-height: 1.7;
+    }
+
+    /* ============ HOW TO ============ */
+    .howto-section {
+      border-top: 1px solid var(--border);
+    }
+
+    .steps {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .step {
+      display: flex;
+      gap: 20px;
+      padding: 24px 0;
+      border-bottom: 1px solid var(--border);
+      align-items: flex-start;
+    }
+
+    .step:last-child { border-bottom: none; }
+
+    .step-num {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--navy);
+      color: #ffffff;
+      font-weight: 900;
+      font-size: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .step-content {}
+
+    .step-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 6px;
+    }
+
+    .step-desc {
+      font-size: 14px;
+      color: var(--text2);
+      line-height: 1.7;
+    }
+
+    /* ============ FAQ ============ */
+    .faq-section {
+      border-top: 1px solid var(--border);
+      background: var(--bg2);
+      max-width: 100%;
+      padding: 72px 20px;
+    }
+
+    .faq-section .section-label,
+    .faq-section h2 { max-width: 720px; margin-left: auto; margin-right: auto; }
+    .faq-section h2 { display: block; }
+
+    .faqs {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .faq {
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .faq-q {
+      background: var(--bg);
+      padding: 18px 20px;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--navy);
+      display: flex;
+      gap: 12px;
+    }
+
+    .faq-q::before {
+      content: 'Q';
+      color: var(--coral);
+      font-weight: 900;
+      flex-shrink: 0;
+    }
+
+    .faq-a {
+      padding: 16px 20px;
+      font-size: 14px;
+      color: var(--text2);
+      line-height: 1.8;
+      display: flex;
+      gap: 12px;
+      border-top: 1px solid var(--border);
+      background: var(--bg2);
+    }
+
+    .faq-a::before {
+      content: 'A';
+      color: var(--accent);
+      font-weight: 900;
+      flex-shrink: 0;
+    }
+
+    /* ============ FINAL CTA ============ */
+    .final-cta {
+      background: linear-gradient(150deg, var(--navy) 0%, var(--navy2) 100%);
+      text-align: center;
+      padding: 80px 20px;
+    }
+
+    .final-cta-inner {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .final-message {
+      font-size: clamp(20px, 4vw, 30px);
+      font-weight: 900;
+      line-height: 1.6;
+      color: #ffffff;
+      margin-bottom: 16px;
+    }
+
+    .final-sub {
+      font-size: 15px;
+      color: rgba(255,255,255,0.78);
+      line-height: 1.9;
+      margin-bottom: 48px;
+    }
+
+    .final-sub strong { color: #ffffff; }
+
+    footer {
+      text-align: center;
+      padding: 32px 20px;
+      background: var(--navy);
+      border-top: 1px solid rgba(255,255,255,0.1);
+      font-size: 12px;
+      color: rgba(255,255,255,0.4);
+    }
+
+    /* ============ RESPONSIVE ============ */
+    @media (max-width: 480px) {
+      .info-box {
+        padding: 20px 24px;
+      }
+      .cta-btn {
+        padding: 18px 40px;
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-label">Closed Live 2026</div>
+    <h1>2026年、<br>これだけやっておけ。</h1>
+    <p class="hero-period">eBay輸出 × Catawiki</p>
+    <p class="hero-sub">
+      円安の今、海外に売らないのはもったいない。<br>
+      <strong>2人の専門家がクローズドで「本当のこと」を全部話します。</strong>
+    </p>
+    <p style="display:inline-block; background:rgba(255,255,255,0.12); border:1px solid rgba(255,255,255,0.2); border-radius:20px; padding:8px 24px; font-size:13px; color:rgba(255,255,255,0.9); margin-bottom:32px; letter-spacing:0.5px;">
+      🌿 屋久島から届ける、2026年の未来予測
+    </p><br>
+
+    <div class="info-box">
+      <div class="info-item">
+        <span class="icon">📅</span>
+        <span class="label">日時</span>
+        <span class="value">2026年4月13日（月）20:00〜21:30</span>
+      </div>
+      <div class="info-item">
+        <span class="icon">🔒</span>
+        <span class="label">形式</span>
+        <span class="value">録画なし・外部公開なし・完全クローズド</span>
+      </div>
+      <div class="info-item">
+        <span class="icon">👥</span>
+        <span class="label">定員</span>
+        <span class="value">先着30名限定</span>
+      </div>
+      <div class="info-item">
+        <span class="icon">💰</span>
+        <span class="label">参加費</span>
+        <span class="value">無料</span>
+      </div>
+    </div>
+
+    <br>
+    <a href="#band" class="cta-btn">無料で参加する（BANDへ）</a>
+    <p class="cta-note">※ BANDアプリの事前インストールをお願いします</p>
+  </div>
+
+  <!-- EMPATHY -->
+  <section class="empathy-section">
+    <p class="section-label">For You</p>
+    <h2>あなたは今、<br><em>こんな状態</em>ではないですか？</h2>
+
+    <ul class="checklist">
+      <li>海外販売に興味はあるけど、何から始めればいいか分からない</li>
+      <li>eBayとCatawiki、どちらが自分に合っているのか判断できない</li>
+      <li>「いつかやろう」と思いながら、もう半年以上が経っている</li>
+      <li>円安でチャンスだとは思うけど、失敗が怖くて踏み出せない</li>
+      <li>不用品や手持ちの商品をもっと高く売れる気がしている</li>
+    </ul>
+
+    <p class="empathy-closing">
+      もし1つでも当てはまるなら、<br>
+      <strong>このライブはあなたのために作りました。</strong><br><br>
+      情報が足りないのではありません。<br>
+      あなたが知りたいのは「2026年の今、具体的に何をすればいいか」——<br>
+      それを<strong>断言します。</strong>
+    </p>
+  </section>
+
+  <!-- PLATFORM -->
+  <section class="platform-section">
+    <p class="section-label">What's This?</p>
+    <h2><em>eBay</em>と<em>Catawiki</em>って<br>何ですか？</h2>
+    <p class="platform-intro">
+      「名前は聞いたことあるけど、よく分からない」という方へ。<br>
+      どちらも<strong style="color:#fff;">日本のものを海外に売れるプラットフォーム</strong>ですが、特徴がまったく違います。
+    </p>
+
+    <div class="platforms">
+
+      <!-- eBay -->
+      <div class="platform-card">
+        <div class="platform-card-header ebay">
+          <div class="platform-logo">🛒</div>
+          <div>
+            <div class="platform-name">eBay</div>
+            <div class="platform-tagline">世界最大級のオンラインフリマ・オークションサイト</div>
+          </div>
+        </div>
+        <div class="platform-card-body">
+          <p class="platform-summary">
+            アメリカ発の世界最大級フリマ・ネットショップ。<br>
+            全世界190以上の国でサービス展開しており、月間アクティブユーザーは<strong style="color:#fff;">約1億3千万人</strong>。
+            日本でいう「メルカリの世界版」と思えばイメージしやすいです。<br>
+            主に<strong style="color:#fff;">英語圏（アメリカ・イギリス・カナダ・オーストラリア）</strong>のバイヤーへの販売が強い。
+          </p>
+
+          <div class="platform-stats">
+            <div class="platform-stat">
+              <div class="platform-stat-label">月間ユーザー</div>
+              <div class="platform-stat-value">約1.3億人</div>
+            </div>
+            <div class="platform-stat">
+              <div class="platform-stat-label">主な市場</div>
+              <div class="platform-stat-value">英語圏全般</div>
+            </div>
+            <div class="platform-stat">
+              <div class="platform-stat-label">売り方</div>
+              <div class="platform-stat-value">定価 or 入札</div>
+            </div>
+            <div class="platform-stat">
+              <div class="platform-stat-label">得意ジャンル</div>
+              <div class="platform-stat-value">何でも売れる</div>
+            </div>
+          </div>
+
+          <ul class="platform-pros">
+            <li>商品ジャンルを選ばない。家電・ブランド品・せどり商品・ハンドメイドまで何でも出品できる</li>
+            <li>市場が巨大なので、売れる絶対数が多い</li>
+            <li>日本語でも出品できるツールや代行サービスが充実している</li>
+            <li>メルカリやラクマで売れなかったものが高値で売れることがある</li>
+          </ul>
+
+          <div class="platform-fit ebay">
+            <strong>こんな人に向いている</strong>
+            手持ちの商品を幅広く売りたい人 ／ せどり・転売をすでにやっている人 ／ とにかく数を売りたい人
+          </div>
+        </div>
+      </div>
+
+      <!-- Catawiki -->
+      <div class="platform-card">
+        <div class="platform-card-header catawiki">
+          <div class="platform-logo">🏛️</div>
+          <div>
+            <div class="platform-name">Catawiki</div>
+            <div class="platform-tagline">ヨーロッパ最大のコレクター向けオークションサイト</div>
+          </div>
+        </div>
+        <div class="platform-card-body">
+          <p class="platform-summary">
+            オランダ発のヨーロッパ最大コレクターズオークション。<br>
+            <strong style="color:#fff;">専門家による審査を通過した商品だけ</strong>が出品できる仕組みで、希少性・品質への信頼が高い。
+            日本からの出品はまだ少なく、<strong style="color:#fff;">欧州バイヤーが「日本のもの」を積極的に探している</strong>ブルーオーシャン市場。
+          </p>
+
+          <div class="platform-stats">
+            <div class="platform-stat">
+              <div class="platform-stat-label">月間ユーザー</div>
+              <div class="platform-stat-value">約1000万人</div>
+            </div>
+            <div class="platform-stat">
+              <div class="platform-stat-label">主な市場</div>
+              <div class="platform-stat-value">欧州（独・仏・蘭）</div>
+            </div>
+            <div class="platform-stat">
+              <div class="platform-stat-label">売り方</div>
+              <div class="platform-stat-value">オークション制</div>
+            </div>
+            <div class="platform-stat">
+              <div class="platform-stat-label">得意ジャンル</div>
+              <div class="platform-stat-value">希少品・骨董</div>
+            </div>
+          </div>
+
+          <ul class="platform-pros">
+            <li>希少なものほど高値がつく。日本の古道具・アンティーク・コレクターズアイテムが人気</li>
+            <li>専門家審査があるため「偽物が少ない安全な場所」としてバイヤーの信頼が高い</li>
+            <li>競合する日本人出品者がまだ少なく、今が参入チャンス</li>
+            <li>eBayより単価が高くなりやすい。1点で数万〜数十万円になることも</li>
+          </ul>
+
+          <div class="platform-fit catawiki">
+            <strong>こんな人に向いている</strong>
+            アンティーク・コレクター系の商品を持っている人 ／ 1点もので高値を狙いたい人 ／ ヨーロッパ市場に興味がある人
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- 比較表 -->
+    <div class="platform-compare">
+      <div class="platform-compare-title">かんたん比較表</div>
+      <table class="compare-table">
+        <tr>
+          <th></th>
+          <th>🛒 eBay</th>
+          <th>🏛️ Catawiki</th>
+        </tr>
+        <tr>
+          <td>主な客層</td>
+          <td>英語圏全般</td>
+          <td>欧州コレクター</td>
+        </tr>
+        <tr>
+          <td>得意な商品</td>
+          <td>何でもOK</td>
+          <td>希少品・骨董・アート</td>
+        </tr>
+        <tr>
+          <td>販売単価</td>
+          <td>低〜高（幅広い）</td>
+          <td>中〜高（1点もの向き）</td>
+        </tr>
+        <tr>
+          <td>競合の多さ</td>
+          <td>多い</td>
+          <td>日本人はまだ少ない</td>
+        </tr>
+        <tr>
+          <td>始めやすさ</td>
+          <td>◎ 情報が豊富</td>
+          <td>○ 審査あり</td>
+        </tr>
+      </table>
+    </div>
+
+    <p style="margin-top:24px; font-size:14px; color:#888; line-height:1.8; text-align:center;">
+      「どちらが自分に合っているか」——それも含めてライブで断言します。
+    </p>
+  </section>
+
+  <!-- CONTENT -->
+  <section class="content-section">
+    <p class="section-label">Contents</p>
+    <h2>当日、<em>断言すること。</em></h2>
+    <p class="content-intro">予測ではありません。根拠を持って断言します。</p>
+
+    <div class="parts">
+      <div class="part">
+        <div class="part-header">
+          <span class="part-num">PART 01</span>
+          <span class="part-title">2026年、海外販売の地図が変わる</span>
+        </div>
+        <div class="part-body">
+          <p class="part-item">eBayで今すぐ捨てるべき「古い常識」</p>
+          <p class="part-item">Catawikiが今ブルーオーシャンな本当の理由</p>
+          <p class="part-item">この2つのプラットフォーム、あなたはどちらが向いているか</p>
+        </div>
+      </div>
+
+      <div class="part">
+        <div class="part-header">
+          <span class="part-num">PART 02</span>
+          <span class="part-title">円安時代に売れるもの・売れないもの</span>
+        </div>
+        <div class="part-body">
+          <p class="part-item">2026年、海外バイヤーが日本から買いたいジャンル TOP3</p>
+          <p class="part-item">手持ちの不用品で試せる「最初の1品」の選び方</p>
+          <p class="part-item">値段のつけ方、これだけ覚えておけばいい</p>
+        </div>
+      </div>
+
+      <div class="part">
+        <div class="part-header">
+          <span class="part-num">PART 03</span>
+          <span class="part-title">今すぐやるべき3つのこと</span>
+        </div>
+        <div class="part-body">
+          <p class="part-item">始める前に絶対やってはいけないこと</p>
+          <p class="part-item">最初の1週間でやること、全部見せます</p>
+          <p class="part-item">挫折する人・続く人の分かれ目</p>
+        </div>
+      </div>
+
+      <div class="part">
+        <div class="part-header">
+          <span class="part-num">PART 04</span>
+          <span class="part-title">Q&amp;A（あなたの状況に直接答えます）</span>
+        </div>
+        <div class="part-body">
+          <p class="part-item">当日チャットで質問できます</p>
+          <p class="part-item">このライブ外では話さない内容です</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLOSED -->
+  <div class="closed-section">
+    <p class="section-label">Why Closed</p>
+    <h2>なぜ、<em>クローズド</em>なのか。</h2>
+
+    <div class="closed-box">
+      <p>「無料なのに非公開」には理由があります。</p>
+      <p>
+        このライブで話す内容の一部は、一般公開に向いていません。<br>
+        実際の販売数字、プラットフォームの活用法、今だから言える市場の話。<br>
+        <strong>広まってしまうと、チャンスが潰れることがあります。</strong>
+      </p>
+      <p>
+        だから、本気で動こうとしている方だけにお伝えしたいのです。<br>
+        録画はしません。外部への共有もお断りしています。<br>
+        <strong>その場にいた人だけが聞けた話になります。</strong>
+      </p>
+    </div>
+  </div>
+
+  <!-- BENEFITS -->
+  <section class="benefits-section">
+    <p class="section-label">Special Benefits</p>
+    <h2>参加者<em>限定プレゼント</em></h2>
+
+    <div class="benefits">
+      <div class="benefit">
+        <div class="benefit-icon">🎁</div>
+        <div>
+          <p class="benefit-title">特典①</p>
+          <p class="benefit-desc">「2026年 海外販売スタートチェックリスト」PDF<br>eBay版・Catawiki版、両方お渡しします</p>
+        </div>
+      </div>
+      <div class="benefit">
+        <div class="benefit-icon">📊</div>
+        <div>
+          <p class="benefit-title">特典②</p>
+          <p class="benefit-desc">「売れるジャンル × 価格帯 早見表」PDF<br>当日の内容を1枚に凝縮した保存版</p>
+        </div>
+      </div>
+      <div class="benefit">
+        <div class="benefit-icon">🎤</div>
+        <div>
+          <p class="benefit-title">特典③ 先着5名限定</p>
+          <p class="benefit-desc">ライブ後の個別相談枠（30分・無料）<br>あなたの状況に合わせてアドバイスします</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW TO -->
+  <section class="howto-section" id="band">
+    <p class="section-label">How To Join</p>
+    <h2>参加方法は<em>3ステップ</em>だけ</h2>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <p class="step-title">下のボタンからBANDコミュニティに参加する</p>
+          <p class="step-desc">スマートフォンにBANDアプリをインストールして参加してください</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <p class="step-title">参加確認のメッセージが届く</p>
+          <p class="step-desc">通常24時間以内にBAND内でご連絡します</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-content">
+          <p class="step-title">当日、BAND内にZoomのURLが届く</p>
+          <p class="step-desc">顔出し不要・カメラOFFで参加できます</p>
+        </div>
+      </div>
+    </div>
+
+    <br><br>
+    <div style="text-align:center;">
+      <a href="#" class="cta-btn">今すぐ参加する（残り30席）</a>
+      <p class="cta-note">※ 無料 ／ 録画なし ／ 4月13日（月）20:00〜</p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq-section">
+    <p class="section-label">FAQ</p>
+    <h2>よくある<em>質問</em></h2>
+
+    <div class="faqs">
+      <div class="faq">
+        <div class="faq-q">本当に無料ですか？</div>
+        <div class="faq-a">はい、完全無料です。ただし先着30名で締め切ります。</div>
+      </div>
+      <div class="faq">
+        <div class="faq-q">海外販売は全くの初心者ですが大丈夫ですか？</div>
+        <div class="faq-a">むしろ初心者の方に来てほしいです。「最初にこれだけやっておけ」という内容なので、知識ゼロからでも理解できます。</div>
+      </div>
+      <div class="faq">
+        <div class="faq-q">見逃した場合、録画はありますか？</div>
+        <div class="faq-a">録画・アーカイブはありません。当日リアルタイムでのご参加をお願いします。</div>
+      </div>
+      <div class="faq">
+        <div class="faq-q">eBayもCatawikiも知らないのですが？</div>
+        <div class="faq-a">問題ありません。どちらも基礎から解説します。先入観なく聞いていただける方が吸収が早いくらいです。</div>
+      </div>
+      <div class="faq">
+        <div class="faq-q">後で何か売り込まれますか？</div>
+        <div class="faq-a">ライブ内での販売は行いません。あくまで「知識のギブ」が目的のライブです。</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <div class="final-cta">
+    <div class="final-cta-inner">
+      <p class="final-message">「いつかやろう」は、<br>もうやめませんか。</p>
+      <p class="final-sub">
+        2026年の今、<strong>円安の今</strong>が一番動きやすいタイミングです。<br>
+        このライブに参加することは大きな決断じゃありません。<br>
+        ただBANDに入るだけ。それだけで、半年後の自分が変わります。
+      </p>
+      <a href="#band" class="cta-btn">無料で参加する（残り30席）</a>
+      <p class="cta-note">
+        📅 2026年4月13日（月）20:00〜21:30　／　🔒 録画なし・クローズド開催　／　👥 先着30名限定
+      </p>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2026 海外販売クローズドライブ　永廣 × 中村</p>
+  </footer>
+
+</body>
+</html>
