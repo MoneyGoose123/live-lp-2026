@@ -318,7 +318,7 @@
   <section id="access">
     <div class="section-title" style="background:#2c3e50;">📍 集合場所・住所一覧（コピペ用）</div>
     <div class="card">
-      <p style="font-size:0.9rem;color:#555;margin-bottom:16px;">📱 住所をタップ→長押しでコピー、またはボタンを押してGoogleマップへ貼り付けてください。</p>
+      <p style="font-size:0.9rem;color:#555;margin-bottom:16px;">📱 「コピー」で住所をコピー、「マップで開く」でGoogleマップに直接ジャンプできます。</p>
 
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
 
@@ -328,16 +328,22 @@
           <div style="font-size:0.82rem;color:#555;margin-bottom:10px;">3/12〜3/17 宿泊 / 3/22〜帰国組宿泊</div>
           <div class="addr-text" id="addr1" style="background:white;border:1px solid #ccc;border-radius:6px;padding:10px;font-size:0.95rem;font-family:monospace;line-height:1.6;cursor:text;user-select:all;">1201 NW 42nd Ave,
 Miami, FL 33126</div>
-          <button onclick="copyAddr('addr1',this)" style="margin-top:8px;width:100%;padding:8px;background:#2e86c1;color:white;border:none;border-radius:6px;font-size:0.88rem;cursor:pointer;">📋 コピー</button>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:8px;">
+            <button onclick="copyAddr('addr1',this)" style="padding:8px;background:#2e86c1;color:white;border:none;border-radius:6px;font-size:0.85rem;cursor:pointer;">📋 コピー</button>
+            <a href="https://www.google.com/maps/search/?api=1&query=Miami+Airport+Marriott" target="_blank" style="padding:8px;background:#34a853;color:white;border-radius:6px;font-size:0.85rem;text-align:center;text-decoration:none;display:block;">🗺️ マップで開く</a>
+          </div>
         </div>
 
-        <!-- Aloft Miami -->
+        <!-- Aloft Miami Brickell -->
         <div class="addr-card" style="background:#eaf4fb;border:1px solid #aed6f1;border-radius:10px;padding:16px;">
           <div style="font-size:1.1rem;font-weight:bold;margin-bottom:4px;">🏨 Aloft Miami Brickell</div>
           <div style="font-size:0.82rem;color:#555;margin-bottom:10px;">3/12〜3/17 宿泊</div>
           <div class="addr-text" id="addr2" style="background:white;border:1px solid #ccc;border-radius:6px;padding:10px;font-size:0.95rem;font-family:monospace;line-height:1.6;cursor:text;user-select:all;">1001 SW 2nd Ave,
 Miami, FL 33130</div>
-          <button onclick="copyAddr('addr2',this)" style="margin-top:8px;width:100%;padding:8px;background:#2e86c1;color:white;border:none;border-radius:6px;font-size:0.88rem;cursor:pointer;">📋 コピー</button>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:8px;">
+            <button onclick="copyAddr('addr2',this)" style="padding:8px;background:#2e86c1;color:white;border:none;border-radius:6px;font-size:0.85rem;cursor:pointer;">📋 コピー</button>
+            <a href="https://www.google.com/maps/search/?api=1&query=Aloft+Miami+Brickell" target="_blank" style="padding:8px;background:#34a853;color:white;border-radius:6px;font-size:0.85rem;text-align:center;text-decoration:none;display:block;">🗺️ マップで開く</a>
+          </div>
         </div>
 
         <!-- loanDepot Park -->
@@ -346,7 +352,10 @@ Miami, FL 33130</div>
           <div style="font-size:0.82rem;color:#555;margin-bottom:10px;">3/14・15・16・17 試合会場</div>
           <div class="addr-text" id="addr3" style="background:white;border:1px solid #ccc;border-radius:6px;padding:10px;font-size:0.95rem;font-family:monospace;line-height:1.6;cursor:text;user-select:all;">501 Marlins Way,
 Miami, FL 33125</div>
-          <button onclick="copyAddr('addr3',this)" style="margin-top:8px;width:100%;padding:8px;background:#c0392b;color:white;border:none;border-radius:6px;font-size:0.88rem;cursor:pointer;">📋 コピー</button>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:8px;">
+            <button onclick="copyAddr('addr3',this)" style="padding:8px;background:#c0392b;color:white;border:none;border-radius:6px;font-size:0.85rem;cursor:pointer;">📋 コピー</button>
+            <a href="https://www.google.com/maps/search/?api=1&query=loanDepot+Park+Miami" target="_blank" style="padding:8px;background:#34a853;color:white;border-radius:6px;font-size:0.85rem;text-align:center;text-decoration:none;display:block;">🗺️ マップで開く</a>
+          </div>
         </div>
 
         <!-- Terminal V -->
@@ -355,7 +364,10 @@ Miami, FL 33125</div>
           <div style="font-size:0.82rem;color:#555;margin-bottom:10px;">3/18 17:00 乗船 ／ Terminal V</div>
           <div class="addr-text" id="addr4" style="background:white;border:1px solid #ccc;border-radius:6px;padding:10px;font-size:0.95rem;font-family:monospace;line-height:1.6;cursor:text;user-select:all;">1015 N America Way,
 Miami, FL 33132</div>
-          <button onclick="copyAddr('addr4',this)" style="margin-top:8px;width:100%;padding:8px;background:#27ae60;color:white;border:none;border-radius:6px;font-size:0.88rem;cursor:pointer;">📋 コピー</button>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:8px;">
+            <button onclick="copyAddr('addr4',this)" style="padding:8px;background:#27ae60;color:white;border:none;border-radius:6px;font-size:0.85rem;cursor:pointer;">📋 コピー</button>
+            <a href="https://www.google.com/maps/search/?api=1&query=Port+of+Miami+Terminal+V" target="_blank" style="padding:8px;background:#34a853;color:white;border-radius:6px;font-size:0.85rem;text-align:center;text-decoration:none;display:block;">🗺️ マップで開く</a>
+          </div>
         </div>
 
       </div>
@@ -365,7 +377,10 @@ Miami, FL 33132</div>
         <div style="font-size:1.05rem;font-weight:bold;margin-bottom:4px;">✈️ マイアミ国際空港（MIA）</div>
         <div style="font-size:0.82rem;color:#555;margin-bottom:10px;">到着・出発ターミナル</div>
         <div class="addr-text" id="addr5" style="background:white;border:1px solid #ccc;border-radius:6px;padding:10px;font-size:0.95rem;font-family:monospace;line-height:1.6;cursor:text;user-select:all;">2100 NW 42nd Ave, Miami, FL 33142</div>
-        <button onclick="copyAddr('addr5',this)" style="margin-top:8px;padding:8px 20px;background:#7f8c8d;color:white;border:none;border-radius:6px;font-size:0.88rem;cursor:pointer;">📋 コピー</button>
+        <div style="display:grid;grid-template-columns:auto auto 1fr;gap:6px;margin-top:8px;">
+          <button onclick="copyAddr('addr5',this)" style="padding:8px 16px;background:#7f8c8d;color:white;border:none;border-radius:6px;font-size:0.85rem;cursor:pointer;">📋 コピー</button>
+          <a href="https://www.google.com/maps/search/?api=1&query=Miami+International+Airport" target="_blank" style="padding:8px 16px;background:#34a853;color:white;border-radius:6px;font-size:0.85rem;text-align:center;text-decoration:none;display:inline-block;">🗺️ マップで開く</a>
+        </div>
       </div>
 
     </div>
