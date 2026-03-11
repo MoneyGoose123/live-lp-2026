@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>マイアミ・カリブ海クルーズ 旅のしおり 2026</title>
+  <style>
+    :root {
+      --primary: #1a5276;
+      --accent: #2e86c1;
+      --sea: #1abc9c;
+      --warning: #e67e22;
+      --danger: #e74c3c;
+      --ok: #27ae60;
+      --wbc: #c0392b;
+      --cruise: #154360;
+      --port: #0e6655;
+      --bg: #f0f4f8;
+      --card: #ffffff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Hiragino Kaku Gothic ProN', 'メイリオ', sans-serif;
+      background: var(--bg);
+      color: #2c3e50;
+      line-height: 1.7;
+    }
+    /* HERO */
+    .hero {
+      background: linear-gradient(135deg, #1a5276 0%, #1abc9c 100%);
+      color: white;
+      text-align: center;
+      padding: 60px 20px 40px;
+    }
+    .hero h1 { font-size: 2rem; font-weight: bold; text-shadow: 0 2px 6px rgba(0,0,0,.3); }
+    .hero .subtitle { font-size: 1.1rem; opacity: .9; margin-top: 8px; }
+    .hero .dates { margin-top: 16px; font-size: 0.95rem; opacity: .8; background: rgba(255,255,255,.15); display: inline-block; padding: 6px 20px; border-radius: 20px; }
+
+    /* NAV */
+    nav {
+      background: var(--primary);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      overflow-x: auto;
+      white-space: nowrap;
+      padding: 0 10px;
+    }
+    nav a {
+      display: inline-block;
+      color: #ecf0f1;
+      text-decoration: none;
+      padding: 14px 16px;
+      font-size: 0.85rem;
+      transition: background .2s;
+    }
+    nav a:hover { background: rgba(255,255,255,.15); }
+
+    /* CONTENT */
+    .container { max-width: 860px; margin: 0 auto; padding: 24px 16px 60px; }
+
+    /* SECTION */
+    section { margin-bottom: 32px; }
+    .section-title {
+      font-size: 1.3rem;
+      font-weight: bold;
+      padding: 12px 18px;
+      border-radius: 8px 8px 0 0;
+      color: white;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .section-title.miami    { background: var(--accent); }
+    .section-title.wbc      { background: var(--wbc); }
+    .section-title.cruise   { background: var(--cruise); }
+    .section-title.keywest  { background: var(--ok); }
+    .section-title.bimini   { background: var(--sea); }
+    .section-title.packing  { background: #6c3483; }
+    .section-title.itinerary{ background: #2c3e50; }
+
+    .card {
+      background: var(--card);
+      border-radius: 0 0 8px 8px;
+      padding: 20px 22px;
+      box-shadow: 0 2px 8px rgba(0,0,0,.07);
+    }
+
+    /* ITINERARY TABLE */
+    .iti-table { width: 100%; border-collapse: collapse; font-size: 0.93rem; }
+    .iti-table th {
+      background: #2c3e50;
+      color: white;
+      padding: 10px 12px;
+      text-align: left;
+    }
+    .iti-table td { padding: 10px 12px; border-bottom: 1px solid #e8ecef; vertical-align: top; }
+    .iti-table tr:nth-child(even) td { background: #f7f9fb; }
+    .badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: bold;
+      padding: 2px 8px;
+      border-radius: 10px;
+      color: white;
+    }
+    .badge.wbc    { background: var(--wbc); }
+    .badge.cruise { background: var(--cruise); }
+    .badge.port   { background: var(--port); }
+    .badge.fly    { background: #7f8c8d; }
+
+    /* TIPS */
+    .tips-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    @media(max-width:600px){ .tips-grid { grid-template-columns: 1fr; } }
+
+    .tip-box {
+      border-radius: 8px;
+      padding: 14px 16px;
+      font-size: 0.92rem;
+    }
+    .tip-box.danger  { background: #fdf2f2; border-left: 4px solid var(--danger); }
+    .tip-box.warning { background: #fef9ee; border-left: 4px solid var(--warning); }
+    .tip-box.ok      { background: #eafaf1; border-left: 4px solid var(--ok); }
+    .tip-box.info    { background: #eaf4fb; border-left: 4px solid var(--accent); }
+    .tip-box h4 { font-size: 0.95rem; margin-bottom: 6px; }
+
+    ul.tips { padding-left: 18px; }
+    ul.tips li { margin-bottom: 5px; }
+
+    /* CHECKLIST */
+    .checklist-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    @media(max-width:600px){ .checklist-grid { grid-template-columns: 1fr; } }
+    .checklist-box h4 { font-size: 0.95rem; font-weight: bold; margin-bottom: 8px; padding-bottom: 6px; border-bottom: 2px solid #e0e0e0; }
+    .checklist-box label {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: 0.88rem;
+      margin-bottom: 6px;
+      cursor: pointer;
+    }
+    .checklist-box input[type=checkbox] { margin-top: 3px; flex-shrink: 0; width: 16px; height: 16px; }
+    .checklist-box label.checked { text-decoration: line-through; color: #aaa; }
+
+    /* ALERT BANNER */
+    .alert {
+      background: #fdf2f2;
+      border: 1px solid #f1948a;
+      border-radius: 8px;
+      padding: 14px 18px;
+      margin-bottom: 20px;
+      font-size: 0.93rem;
+    }
+    .alert strong { color: var(--danger); }
+
+    /* DIVIDER */
+    h3.divider {
+      color: #555;
+      font-size: 1rem;
+      margin: 18px 0 10px;
+      padding-bottom: 4px;
+      border-bottom: 1px solid #dde;
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      font-size: 0.8rem;
+      color: #999;
+      padding: 20px;
+      border-top: 1px solid #e0e0e0;
+    }
+
+    /* PRINT */
+    @media print {
+      nav, .hero { display: none; }
+      .card { box-shadow: none; border: 1px solid #ccc; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div style="font-size:2.5rem; margin-bottom:8px;">⚾🚢🌴</div>
+  <h1>マイアミ・カリブ海クルーズ<br>旅のしおり 2026</h1>
+  <p class="subtitle">WBC観戦 × Virgin Voyages Scarlet Lady</p>
+  <div class="dates">📅 3月12日（木）〜 3月24日（火）</div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <a href="#itinerary">📋 日程</a>
+  <a href="#miami">🌆 マイアミ</a>
+  <a href="#wbc">⚾ WBC</a>
+  <a href="#cruise">🚢 クルーズ</a>
+  <a href="#keywest">🌅 キーウエスト</a>
+  <a href="#bimini">🏖️ ビミニ</a>
+  <a href="#packing">🎒 持ち物</a>
+</nav>
+
+<div class="container">
+
+  <!-- ALERT -->
+  <div class="alert">
+    <strong>⚠️ 重要:</strong> パスポートの有効期限を必ず確認してください。クルーズのバハマ寄港があるため、<strong>帰国日から6ヶ月以上有効</strong>なパスポートが必要です。
+  </div>
+
+  <!-- ITINERARY -->
+  <section id="itinerary">
+    <div class="section-title itinerary">📋 日程一覧</div>
+    <div class="card">
+      <table class="iti-table">
+        <tr>
+          <th>日付</th>
+          <th>内容</th>
+          <th>宿泊</th>
+        </tr>
+        <tr>
+          <td>3/12（木）</td>
+          <td><span class="badge fly">✈ 到着</span> マイアミ到着・チェックイン</td>
+          <td>エアポートマリオット</td>
+        </tr>
+        <tr>
+          <td>3/13（金）</td>
+          <td>マイアミ滞在・観光</td>
+          <td>エアポートマリオット</td>
+        </tr>
+        <tr>
+          <td>3/14（土）</td>
+          <td><span class="badge wbc">⚾ WBC</span> 準々決勝 日本 vs TBD（21:00〜）<br><small>@loanDepot Park</small></td>
+          <td>エアポートマリオット</td>
+        </tr>
+        <tr>
+          <td>3/15（日）</td>
+          <td><span class="badge wbc">⚾ WBC</span> 準決勝1（20:00〜）／ かわにしさん帰国<br><small>@loanDepot Park</small></td>
+          <td>エアポートマリオット</td>
+        </tr>
+        <tr>
+          <td>3/16（月）</td>
+          <td><span class="badge wbc">⚾ WBC</span> 準決勝2（20:00〜）<br><small>@loanDepot Park</small></td>
+          <td>エアポートマリオット</td>
+        </tr>
+        <tr>
+          <td>3/17（火）</td>
+          <td><span class="badge wbc">⚾ WBC</span> 決勝（20:00〜）<br><small>@loanDepot Park</small></td>
+          <td>エアポートマリオット</td>
+        </tr>
+        <tr>
+          <td>3/18（水）</td>
+          <td><span class="badge cruise">🚢 乗船</span> ホテルC/O → 17:00 Scarlet Lady 乗船<br><small>まささん帰国</small></td>
+          <td>Scarlet Lady 船内</td>
+        </tr>
+        <tr>
+          <td>3/19（木）</td>
+          <td>終日航海</td>
+          <td>Scarlet Lady 船内</td>
+        </tr>
+        <tr>
+          <td>3/20（金）</td>
+          <td><span class="badge port">⛵ 寄港</span> キーウエスト 08:00〜17:00</td>
+          <td>Scarlet Lady 船内</td>
+        </tr>
+        <tr>
+          <td>3/21（土）</td>
+          <td><span class="badge port">🏖️ 寄港</span> ビミニ（バハマ）09:00〜19:00</td>
+          <td>Scarlet Lady 船内</td>
+        </tr>
+        <tr>
+          <td>3/22（日）</td>
+          <td><span class="badge fly">🔙 帰港</span> 06:30 マイアミ下船<br><small>中村・高田さん帰国 ／ トミーさん→メキシコ</small></td>
+          <td>マリオット</td>
+        </tr>
+        <tr>
+          <td>3/23（月）</td>
+          <td>ほんいんぼーさん・白澤さん マイアミ滞在</td>
+          <td>マリオット</td>
+        </tr>
+        <tr>
+          <td>3/24（火）</td>
+          <td>ほんいんぼーさん帰国</td>
+          <td>—</td>
+        </tr>
+      </table>
+    </div>
+  </section>
+
+  <!-- MIAMI -->
+  <section id="miami">
+    <div class="section-title miami">🌆 マイアミ 注意事項</div>
+    <div class="card">
+      <div class="tips-grid">
+        <div class="tip-box danger">
+          <h4>🚨 治安・危険エリア</h4>
+          <ul class="tips">
+            <li>北部エリア（リトル・ハイチ、リバティ・シティ）は近づかない</li>
+            <li>夜間の一人歩きは避ける</li>
+            <li>スリ・置き引きに注意（空港、ホテルロビー、ビーチ周辺）</li>
+            <li>派手な格好・高価なアクセサリーは目立つので注意</li>
+          </ul>
+        </div>
+        <div class="tip-box warning">
+          <h4>🚗 移動・駐車</h4>
+          <ul class="tips">
+            <li>移動は <strong>Uber / Lyft</strong> を使うのが安全で便利</li>
+            <li>タクシーより安く、安全に確認できる</li>
+            <li>レンタカーの場合、<strong>車内に荷物を絶対に置かない</strong>（窓を割られる）</li>
+            <li>駐車場代は高額（WBC会場周辺は特に）</li>
+          </ul>
+        </div>
+        <div class="tip-box info">
+          <h4>💵 チップの目安</h4>
+          <ul class="tips">
+            <li>レストラン: <strong>合計金額の18〜20%</strong></li>
+            <li>バー: $1〜2 / 1ドリンク</li>
+            <li>タクシー・Uber: 10〜15%</li>
+            <li>ホテルポーター: $2〜3 / 荷物1個</li>
+            <li>ハウスキーピング: $3〜5 / 泊</li>
+            <li>小額紙幣（$1, $5）を多めに用意しておくと便利</li>
+          </ul>
+        </div>
+        <div class="tip-box ok">
+          <h4>🌤️ 気候・服装</h4>
+          <ul class="tips">
+            <li>3月のマイアミは <strong>25〜30℃</strong>、湿度高め</li>
+            <li>突然のスコールあり → 折りたたみ傘を携帯</li>
+            <li>冷房が強い室内向けに薄手の羽織りものを</li>
+            <li>夜はやや涼しくなる場合あり（試合観戦時）</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3 class="divider">💳 その他の注意事項</h3>
+      <div class="tips-grid">
+        <div class="tip-box info">
+          <h4>📱 通信・Wi-Fi</h4>
+          <ul class="tips">
+            <li>海外SIMまたは国際ローミングを事前に準備</li>
+            <li>Uberの利用にはスマホとカードが必須</li>
+            <li>Google マップを事前にダウンロード（オフライン対応）</li>
+          </ul>
+        </div>
+        <div class="tip-box warning">
+          <h4>💊 健康・緊急時</h4>
+          <ul class="tips">
+            <li>海外旅行保険に必ず加入（医療費が非常に高額）</li>
+            <li>常備薬は多めに持参</li>
+            <li>緊急: 911 / 在マイアミ日本国総領事館: +1-305-530-9090</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WBC -->
+  <section id="wbc">
+    <div class="section-title wbc">⚾ WBC観戦（loanDepot Park）注意事項</div>
+    <div class="card">
+      <div class="alert" style="margin-bottom:16px;">
+        <strong>🎟️ バッグポリシー:</strong> <strong style="color:#c0392b;">クリアバッグのみ入場可</strong>（透明のバッグ限定）。通常のバッグは持ち込み不可です。事前に準備必須！
+      </div>
+
+      <div class="tips-grid">
+        <div class="tip-box danger">
+          <h4>🚫 持ち込み禁止物</h4>
+          <ul class="tips">
+            <li>ガラス瓶・金属缶（水筒も不可）</li>
+            <li>アルコール・清涼飲料水・スポーツドリンク</li>
+            <li>タバコ製品（会場内禁煙）</li>
+            <li>ハードサイドのクーラー・保冷バッグ</li>
+            <li>3'×5'を超える横断幕・旗</li>
+            <li>ドローン、レーザーポインター、花火</li>
+            <li>武器・おもちゃの武器</li>
+            <li>外部からの食べ物（制限あり）</li>
+          </ul>
+        </div>
+        <div class="tip-box ok">
+          <h4>✅ 持ち込めるもの</h4>
+          <ul class="tips">
+            <li>未開封のペットボトル水 <strong>20oz（約600ml）以下 1本</strong></li>
+            <li>クリアバッグ <strong>16"×16"×8"以下</strong></li>
+            <li>小型クラッチ <strong>4.5"×6.5"以下</strong>（非透明OK）</li>
+            <li>医療・育児用品（スタッフに申告）</li>
+            <li>カメラ（フラッシュなし、業務用レンズ不可）</li>
+          </ul>
+        </div>
+        <div class="tip-box warning">
+          <h4>⏰ 時間・アクセス</h4>
+          <ul class="tips">
+            <li>試合開始は21:00または20:00→ <strong>2〜3時間前に会場着</strong>を推奨</li>
+            <li>セキュリティチェックに時間がかかる</li>
+            <li>Uber/Lyftで行くのが便利（駐車場は高額）</li>
+            <li>帰りはUberが捕まりにくいので早めに呼ぶ</li>
+          </ul>
+        </div>
+        <div class="tip-box info">
+          <h4>🍔 会場内で買えるもの</h4>
+          <ul class="tips">
+            <li>飲食は全て会場内で購入可能</li>
+            <li>ビール・アルコールあり（会場内購入）</li>
+            <li>クレジットカード払い対応</li>
+            <li>現金より <strong>カード払いが主流</strong></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tip-box info" style="margin-top:14px;">
+        <h4>📍 loanDepot Park アクセス</h4>
+        <p>住所: 501 Marlins Way, Miami, FL 33125<br>
+        Uber/Lyftのドロップオフポイントを事前確認。帰りは帰宅ラッシュになるので、試合終了前にUberを呼び始めておくとスムーズ。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CRUISE -->
+  <section id="cruise">
+    <div class="section-title cruise">🚢 クルーズ（Scarlet Lady）注意事項</div>
+    <div class="card">
+      <h3 class="divider">📋 乗船前に必ずやること</h3>
+      <div class="tips-grid">
+        <div class="tip-box danger">
+          <h4>📱 Virgin Voyagesアプリ</h4>
+          <ul class="tips">
+            <li><strong>必須:</strong> "Virgin Voyages" アプリを事前インストール</li>
+            <li>Terminal Arrival Time（乗船時間）をアプリで選択する</li>
+            <li>出航24時間前に<strong>健康チェックフォーム</strong>をアプリで回答</li>
+            <li>船内はアプリで全て管理（レストラン予約・スパ予約等）</li>
+          </ul>
+        </div>
+        <div class="tip-box warning">
+          <h4>📄 必要書類</h4>
+          <ul class="tips">
+            <li><strong>パスポート必須</strong>（帰国後6ヶ月以上有効なもの）</li>
+            <li>クルーズ予約確認書</li>
+            <li>乗船時はパスポートとアプリを手元に</li>
+            <li>荷物預けは午前9時から可能</li>
+            <li>ターミナルV（Terminal V）に向かう</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3 class="divider">🚢 船内のルール・知っておくこと</h3>
+      <div class="tips-grid">
+        <div class="tip-box ok">
+          <h4>✅ チップ・支払い</h4>
+          <ul class="tips">
+            <li><strong>チップ不要</strong>（Virgin Voyagesはチップ込み）</li>
+            <li>船内の支払いはクレジットカードのみ</li>
+            <li>チェックイン時にカード登録が必要</li>
+            <li>飲食は多くのレストランが含まれている</li>
+          </ul>
+        </div>
+        <div class="tip-box danger">
+          <h4>🚫 持ち込み禁止物</h4>
+          <ul class="tips">
+            <li>アルコール飲料（船外からの持ち込み不可）</li>
+            <li>違法薬物・CBD製品</li>
+            <li>銃器・爆発物・刃物</li>
+            <li>一回使い捨てプラスチック</li>
+            <li>ドローン</li>
+          </ul>
+        </div>
+        <div class="tip-box info">
+          <h4>👗 ドレスコード・イベント</h4>
+          <ul class="tips">
+            <li>ドレスコードなし（カジュアルでOK）</li>
+            <li><strong>Scarlet Night:</strong> 赤い服を必ず持参！（全員参加が盛り上がる）</li>
+            <li><strong>PJパーティー:</strong> パジャマを持参</li>
+            <li>イベントはアプリで事前確認・予約</li>
+          </ul>
+        </div>
+        <div class="tip-box warning">
+          <h4>🌊 船酔い対策</h4>
+          <ul class="tips">
+            <li>3/19は終日航海 → 酔いやすい人は対策を</li>
+            <li>酔い止め薬（市販）を日本から持参</li>
+            <li>船内にも販売あるが割高</li>
+            <li>船の中央・低い階の部屋が揺れにくい</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tip-box info" style="margin-top:14px;">
+        <h4>🧴 日焼け止めについて</h4>
+        <p>船内・寄港地では<strong>リーフセーフ（環境に優しい）日焼け止め</strong>のみ使用・販売。珊瑚礁を守るため、ケミカル成分（オキシベンゾン等）を含むものは寄港地では使用不可の場合あり。日本から<strong>ミネラル（ノンケミカル）タイプ</strong>を持参推奨。</p>
+      </div>
+
+      <h3 class="divider">📍 乗船ターミナル情報</h3>
+      <div class="tip-box info">
+        <p><strong>Terminal V（ターミナルV）</strong><br>
+        住所: 1015 N America Way, Miami, FL 33132<br>
+        荷物預けは9:00〜 / 乗船開始は14:15〜<br>
+        割り当てられたTerminal Arrival Timeより早く行っても乗れないので注意</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- KEY WEST -->
+  <section id="keywest">
+    <div class="section-title keywest">⛵ キーウエスト寄港日（3/20）</div>
+    <div class="card">
+      <div class="tip-box ok" style="margin-bottom:14px;">
+        <strong>寄港時間: 08:00〜17:00（船内に戻る時間厳守！遅れると置いていかれます）</strong>
+      </div>
+      <div class="tips-grid">
+        <div class="tip-box info">
+          <h4>🗺️ おすすめスポット</h4>
+          <ul class="tips">
+            <li><strong>デュバルストリート:</strong> メインストリート、バー・レストラン・ショップが並ぶ</li>
+            <li><strong>サウスモストポイント:</strong> 米国最南端、写真スポット（行列注意）</li>
+            <li><strong>ヘミングウェイハウス:</strong> 文豪の元邸宅、六本指の猫が有名</li>
+            <li><strong>マロリー・スクエア:</strong> 夕日の名所（港の近く）</li>
+            <li><strong>フォートザカリー・テイラー州立公園:</strong> 天然ビーチ、シュノーケリング</li>
+          </ul>
+        </div>
+        <div class="tip-box warning">
+          <h4>⚠️ 注意事項</h4>
+          <ul class="tips">
+            <li>非常に暑い（日焼け止め・水必須）</li>
+            <li>歩きやすい靴で行くこと</li>
+            <li>移動: 徒歩・自転車・スクーター・ゴルフカートレンタルが便利</li>
+            <li>フードはキューバ料理がおすすめ</li>
+            <li>現金・カード両方使える</li>
+            <li>帰船時間（17:00）の30分前には港に戻ること</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BIMINI -->
+  <section id="bimini">
+    <div class="section-title bimini">🏖️ ビミニ（バハマ）寄港日（3/21）</div>
+    <div class="card">
+      <div class="tip-box danger" style="margin-bottom:14px;">
+        <strong>⚠️ 寄港時間: 09:00〜19:00（帰船厳守！）<br>バハマ入国のため<strong>パスポート必須（船から降りる全員）</strong></strong>
+      </div>
+      <div class="tips-grid">
+        <div class="tip-box warning">
+          <h4>📋 入国・手続き</h4>
+          <ul class="tips">
+            <li><strong>パスポート</strong>を必ず携帯して下船</li>
+            <li>入国審査カード（Immigration Card）を記入・保持</li>
+            <li>帰りも同カードを提出</li>
+            <li>政府職員へのチップは<strong>違法</strong>（要求されても断ること）</li>
+          </ul>
+        </div>
+        <div class="tip-box info">
+          <h4>💰 通貨・買い物</h4>
+          <ul class="tips">
+            <li>通貨: バハマドル（BSD）= <strong>米ドルがそのまま使える</strong></li>
+            <li>ATMあり（手数料が高め）</li>
+            <li>カード払い可能な場所が多い</li>
+            <li>現金は少額を用意しておくと安心</li>
+          </ul>
+        </div>
+        <div class="tip-box ok">
+          <h4>🎯 おすすめアクティビティ</h4>
+          <ul class="tips">
+            <li>白砂のビーチでのんびり</li>
+            <li>シュノーケリング（珊瑚礁あり）</li>
+            <li>釣りチャーター（要事前予約）</li>
+            <li>Saponaの難破船ダイビング</li>
+            <li>Resort World Bimimiのプール・施設利用</li>
+          </ul>
+        </div>
+        <div class="tip-box warning">
+          <h4>🚗 島内移動</h4>
+          <ul class="tips">
+            <li>無料トラムで島内を移動できる</li>
+            <li>ゴルフカートのレンタルも可能</li>
+            <li>繁忙日はレンタルが早く埋まる→早めに手配</li>
+            <li>島は小さいので徒歩でも回れる</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PACKING -->
+  <section id="packing">
+    <div class="section-title packing">🎒 持ち物チェックリスト</div>
+    <div class="card">
+      <div class="checklist-grid">
+
+        <div class="checklist-box">
+          <h4>📄 書類・貴重品</h4>
+          <label><input type="checkbox"> パスポート（6ヶ月以上有効）</label>
+          <label><input type="checkbox"> クルーズ予約確認書</label>
+          <label><input type="checkbox"> 航空券（Eチケット）</label>
+          <label><input type="checkbox"> 海外旅行保険証</label>
+          <label><input type="checkbox"> クレジットカード（2枚以上）</label>
+          <label><input type="checkbox"> 現金（USD、小額紙幣多め）</label>
+          <label><input type="checkbox"> ホテル予約確認書</label>
+          <label><input type="checkbox"> 緊急連絡先メモ</label>
+        </div>
+
+        <div class="checklist-box">
+          <h4>📱 電子機器</h4>
+          <label><input type="checkbox"> スマートフォン + 充電器</label>
+          <label><input type="checkbox"> モバイルバッテリー</label>
+          <label><input type="checkbox"> 変換プラグ（米国タイプA、日本と同じ）</label>
+          <label><input type="checkbox"> イヤフォン・ヘッドフォン</label>
+          <label><input type="checkbox"> カメラ（任意）</label>
+          <label><input type="checkbox"> Virgin Voyagesアプリ（事前インストール）</label>
+          <label><input type="checkbox"> Uberアプリ（事前インストール）</label>
+          <label><input type="checkbox"> Google翻訳アプリ（オフライン辞書）</label>
+        </div>
+
+        <div class="checklist-box">
+          <h4>⚾ WBC観戦グッズ</h4>
+          <label><input type="checkbox"> <strong>クリアバッグ</strong>（透明、16"×16"×8"以下）</label>
+          <label><input type="checkbox"> 未開封ペットボトル水（20oz以下、1本）</label>
+          <label><input type="checkbox"> 日本代表グッズ・ユニフォーム</label>
+          <label><input type="checkbox"> 薄手の羽織り（冷房対策）</label>
+          <label><input type="checkbox"> 折りたたみ傘（突然の雨対策）</label>
+          <label><input type="checkbox"> チケット（スクリーンショット保存も）</label>
+        </div>
+
+        <div class="checklist-box">
+          <h4>🚢 クルーズ用衣類</h4>
+          <label><input type="checkbox"> <strong>赤い服</strong>（Scarlet Night必須！）</label>
+          <label><input type="checkbox"> パジャマ（PJパーティー）</label>
+          <label><input type="checkbox"> 水着（複数枚）</label>
+          <label><input type="checkbox"> ラッシュガード・UVカット服</label>
+          <label><input type="checkbox"> サンダル・ビーチ用履き物</label>
+          <label><input type="checkbox"> 歩きやすいスニーカー（観光用）</label>
+          <label><input type="checkbox"> 夜用のきれいめな服</label>
+          <label><input type="checkbox"> 下着・靴下（日数分+α）</label>
+        </div>
+
+        <div class="checklist-box">
+          <h4>🧴 衛生・日焼け対策</h4>
+          <label><input type="checkbox"> <strong>リーフセーフ日焼け止め</strong>（ノンケミカル）</label>
+          <label><input type="checkbox"> 日焼け止めスティック（ウォータープルーフ）</label>
+          <label><input type="checkbox"> サングラス（UV400以上）</label>
+          <label><input type="checkbox"> 帽子・キャップ</label>
+          <label><input type="checkbox"> リップクリーム（SPFあり）</label>
+          <label><input type="checkbox"> ボディタオル・シャンプー（船内にあるが持参も可）</label>
+          <label><input type="checkbox"> ハンドサニタイザー</label>
+          <label><input type="checkbox"> 虫除けスプレー（寄港地用）</label>
+        </div>
+
+        <div class="checklist-box">
+          <h4>💊 薬・医療</h4>
+          <label><input type="checkbox"> 酔い止め薬（船酔い・車酔い対応）</label>
+          <label><input type="checkbox"> 常備薬（胃薬、頭痛薬、風邪薬）</label>
+          <label><input type="checkbox"> 絆創膏・消毒薬</label>
+          <label><input type="checkbox"> 処方薬（多めに持参）</label>
+          <label><input type="checkbox"> 虫刺され薬</label>
+          <label><input type="checkbox"> 下痢止め・整腸剤</label>
+          <label><input type="checkbox"> 目薬</label>
+        </div>
+
+      </div>
+
+      <h3 class="divider" style="margin-top:20px;">🏖️ 寄港地用（小さいデイバッグに入れて持ち歩く）</h3>
+      <div class="checklist-grid">
+        <div class="checklist-box">
+          <h4>キーウエスト・ビミニ共通</h4>
+          <label><input type="checkbox"> パスポート（バハマは必須、KWはコピーでも可）</label>
+          <label><input type="checkbox"> 水（日焼け対策・熱中症予防）</label>
+          <label><input type="checkbox"> 現金（USD）少額</label>
+          <label><input type="checkbox"> クレジットカード1枚</label>
+          <label><input type="checkbox"> スマホ（地図・Uber）</label>
+          <label><input type="checkbox"> 日焼け止め・帽子</label>
+          <label><input type="checkbox"> タオル（水着で行く場合）</label>
+        </div>
+        <div class="checklist-box">
+          <h4>⚠️ 帰船時間 絶対に守ること！</h4>
+          <label><input type="checkbox"> キーウエスト: <strong>16:30には港に戻る</strong></label>
+          <label><input type="checkbox"> ビミニ: <strong>18:30には港に戻る</strong></label>
+          <br>
+          <p style="font-size:0.85rem; color:#e74c3c; font-weight:bold;">
+            ⚠️ 時間に遅れると船は出港します。<br>
+            スマホのタイマーをセットしておくこと！
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EMERGENCY INFO -->
+  <section>
+    <div class="section-title" style="background:#7f8c8d;">📞 緊急連絡先・重要情報</div>
+    <div class="card">
+      <div class="tips-grid">
+        <div class="tip-box danger">
+          <h4>🆘 緊急連絡先</h4>
+          <ul class="tips">
+            <li>米国緊急通報: <strong>911</strong></li>
+            <li>在マイアミ日本国総領事館: <strong>+1-305-530-9090</strong></li>
+            <li>Virgin Voyages: <strong>1-954-488-2955</strong></li>
+          </ul>
+        </div>
+        <div class="tip-box info">
+          <h4>📍 主要住所</h4>
+          <ul class="tips">
+            <li>ホテル: Miami Airport Marriott</li>
+            <li>WBC会場: 501 Marlins Way, Miami FL 33125</li>
+            <li>クルーズターミナル: Terminal V, 1015 N America Way, Miami FL 33132</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <p>マイアミ・カリブ海クルーズ 旅のしおり 2026 | WBC × Virgin Voyages Scarlet Lady</p>
+  <p style="margin-top:4px; color:#bbb;">楽しい旅を！ Have a great trip! ⚾🚢🌴</p>
+</footer>
+
+<script>
+  // チェックボックスの状態をlocalStorageに保存
+  document.querySelectorAll('input[type=checkbox]').forEach((cb, i) => {
+    const key = 'check_' + i;
+    cb.checked = localStorage.getItem(key) === 'true';
+    if (cb.checked) cb.parentElement.classList.add('checked');
+    cb.addEventListener('change', () => {
+      localStorage.setItem(key, cb.checked);
+      cb.parentElement.classList.toggle('checked', cb.checked);
+    });
+  });
+</script>
+
+</body>
+</html>
